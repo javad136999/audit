@@ -9,31 +9,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=zero-defaults-supabase-20261117">
+  <link rel="stylesheet" href="css/style.css?v=shared-db-20261117">
 </head>
 <body>
-  <div class="app-shell">
+  <div id="authRoot" class="auth-root" hidden></div>
+  <div id="appShell" class="app-shell" hidden>
     <aside class="sidebar" id="sidebar">
       <div class="brand"><div class="brand-mark"><span class="brand-flame"></span><span class="brand-check">✓</span></div><div class="brand-copy"><strong>پایش‌بان</strong><small>ممیزی پتروشیمی‌های عسلویه</small></div></div>
       <div class="side-label">فضای کاری</div>
       <nav id="mainNav" class="nav-list" aria-label="ناوبری اصلی"></nav>
-      <div class="sidebar-bottom"><div class="live-badge"><span></span> نسخهٔ عملیاتی محلی</div><div class="sidebar-note">مرکز بهداشت، ایمنی و محیط زیست<br>منطقه ویژه اقتصادی انرژی پارس</div></div>
+      <div class="sidebar-bottom"><div class="live-badge"><span></span> همگام‌سازی ابری فعال</div><div class="sidebar-note">مرکز بهداشت، ایمنی و محیط زیست<br>منطقه ویژه اقتصادی انرژی پارس</div></div>
     </aside>
     <div class="page-wrap">
       <header class="topbar">
         <button class="mobile-menu" id="mobileMenu" aria-label="بازکردن منو">☰</button>
         <div class="crumbs"><span>سامانه ممیزی</span><b>/</b><strong id="pageCrumb">داشبورد</strong></div>
-        <div class="top-actions"><label class="year-select-wrap"><span>سال ممیزی</span><select id="yearSelect" aria-label="انتخاب سال ممیزی"></select></label><button class="btn btn-ghost" id="newYearBtn"><span class="plus">＋</span><span>سال جدید</span></button><div class="save-indicator" id="saveIndicator"><i></i><span>ذخیرهٔ خودکار</span></div></div>
+        <div class="top-actions"><label class="year-select-wrap"><span>سال ممیزی</span><select id="yearSelect" aria-label="انتخاب سال ممیزی"></select></label><button class="btn btn-ghost" id="newYearBtn"><span class="plus">＋</span><span>سال جدید</span></button><div class="save-indicator" id="saveIndicator"><i></i><span>همگام‌سازی ابری</span></div><span id="cloudUser" class="cloud-user" hidden></span><button class="btn btn-outline btn-sm" id="logoutBtn" hidden>خروج</button></div>
       </header>
       <main id="main" class="main-content" tabindex="-1"></main>
-      <footer class="app-footer"><span>پایش‌بان <b>·</b> سامانهٔ مدیریت ممیزی سالانه</span><span>اطلاعات این نسخه در همین مرورگر ذخیره می‌شود.</span></footer>
+      <footer class="app-footer"><span>پایش‌بان <b>·</b> سامانهٔ مدیریت ممیزی سالانه</span><span>ذخیرهٔ مشترک و همگام‌سازی آنلاین با Supabase</span></footer>
     </div>
   </div>
   <div id="overlay" class="overlay" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
   <div id="printRoot"></div>
   <noscript><p style="padding:20px">برای استفاده از سامانه، جاوااسکریپت مرورگر باید فعال باشد.</p></noscript>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js?v=shared-db-20261117"></script>
   <script src="js/seed.js"></script>
-  <script src="js/app.js?v=zero-defaults-supabase-20261117"></script>
+  <script src="js/app.js?v=shared-db-20261117"></script>
 </body>
 </html>
