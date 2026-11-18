@@ -32,3 +32,5 @@
 @media print{.auth-root{display:none!important}}
 
 #cloudUser[hidden],#logoutBtn[hidden]{display:none!important}
+
+#loginBtn[hidden],#cloudUser[hidden],#logoutBtn[hidden]{display:none!important}.guest-continue{width:100%;margin-top:12px}
