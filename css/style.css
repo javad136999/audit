@@ -51,3 +51,5 @@
 .category-head h3{font-size:13px;font-weight:900!important;color:#172f40!important;letter-spacing:-.1px}
 @media(max-width:780px){.score-head{top:65px;padding:13px 15px}}
 @media print{.score-head{position:static;box-shadow:none}}
+
+.previous-rating{display:inline-block;margin-inline:6px 4px;padding:1px 4px;border-radius:4px;background:#fff1f1;color:#c62828!important;font-size:10px;font-weight:800;line-height:1.5;white-space:nowrap;direction:rtl;unicode-bidi:isolate;vertical-align:baseline}
