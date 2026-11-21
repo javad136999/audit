@@ -217,6 +217,7 @@
     const note=row.querySelector('.criterion-note');if(note&&criterionWeight>0)note.remove();else if(note)note.textContent='وزن این بند صفر است؛ برای تخصیص وزن، مقدار را ویرایش کنید.';
     refreshCurrentScore(companyId);
   }
+  document.addEventListener('focusin',e=>{if(e.target.matches('[data-rating]'))e.target.select();});
   document.addEventListener('input',e=>{
     if(e.target.id==='companySearch'){companyQuery=e.target.value;render();const x=$('#companySearch');x?.focus();x?.setSelectionRange(companyQuery.length,companyQuery.length);return;}
     if(e.target.matches('[data-rating]')){
