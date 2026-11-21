@@ -44,3 +44,10 @@
 .company-name,.company-list-copy strong,.rank-name,.criterion-text,.category-head h3,.criteria-item .criteria-question{color:#111827!important;font-weight:800!important}
 .rating-input{cursor:text;user-select:text;-webkit-user-select:text;touch-action:manipulation}
 .rating-input:invalid{border-color:#c65050;background:#fff8f8}
+
+/* Keep the audited company and its live score visible while scrolling criteria. */
+.score-head{position:sticky;top:78px;z-index:12;background:var(--surface,#fff);box-shadow:0 8px 16px rgba(19,44,59,.07)}
+.score-head h2{font-weight:900;color:#152f40}
+.category-head h3{font-size:13px;font-weight:900!important;color:#172f40!important;letter-spacing:-.1px}
+@media(max-width:780px){.score-head{top:65px;padding:13px 15px}}
+@media print{.score-head{position:static;box-shadow:none}}

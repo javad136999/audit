@@ -233,6 +233,17 @@
   });
   document.addEventListener('change',e=>{if(e.target.matches('[data-weight]')){const el=e.target,raw=el.value.trim(),value=raw===''?0:Number(raw);if(!Number.isFinite(value)||value<0||value>100){el.setCustomValidity('وزن باید بین صفر و ۱۰۰ باشد');el.reportValidity();return;}el.setCustomValidity('');setBalancedWeight(store.year,el.dataset.weight,value);persist();render();return;}if(e.target.id==='yearSelect'){store.year=e.target.value;persist();render();}if(e.target.id==='companyFilter'){companyFilter=e.target.value;render();}if(e.target.id==='sectionFilter'){sectionFilter=e.target.value;render();}if(e.target.id==='importFile'&&e.target.files[0])importData(e.target.files[0]);});
   $('#newYearBtn').addEventListener('click',addYear);$('#logoutBtn').addEventListener('click',async()=>{if(!cloudClient)return;const {error}=await cloudClient.auth.signOut();if(error)toast('خروج از حساب انجام نشد.','error');});$('#mobileMenu').addEventListener('click',()=>{const s=$('#sidebar');s.classList.add('open');$('#overlay').hidden=false;$('#overlay').onclick=e=>{if(e.target.id==='overlay'){s.classList.remove('open');$('#overlay').hidden=true;}};});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+  document.addEventListener('keydown',e=>{
+    const current=e.target.closest?.('[data-rating]');
+    if(e.key==='Enter'&&current){
+      e.preventDefault();
+      if(!current.checkValidity()){current.reportValidity();return;}
+      const fields=[...document.querySelectorAll('[data-rating]')].filter(field=>field.dataset.company===current.dataset.company);
+      const next=fields[fields.indexOf(current)+1];
+      if(next){next.focus();next.scrollIntoView({block:'center',behavior:'smooth'});}
+      return;
+    }
+    if(e.key==='Escape')closeModal();
+  });
   startAuth();
 })();
